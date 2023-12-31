@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Rubik+Glitch&family=Sora:wght@800&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Sora;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background: #0c7dc9;
+    background-image: linear-gradient(to right, #333 1px, transparent 1px),
+        linear-gradient(to bottom, #333 1px, transparent 1px);
+}
+.wavy{
+    position:absolute;
+    top: 18%;
+}
+.wavy span {
+    position: relative;
+    color: #fff;
+    display: inline-block;
+    font-size: 2em;
+    text-transform: uppercase;
+    animation: animate 1s ease-in-out infinite;
+    animation-delay: calc(0.1s * var(--i));
+}
+@keyframes animate{
+    0%{
+        transform: translateY(0px);
+    }
+    20%{
+        transform: translateY(-20px);
+    }
+    40%, 100%{
+        transform: translateY(0px);
+    }
+}
+
+.content {
+    position: absolute;
+    cursor: pointer;
+}
+
+.content::before {
+    content: "By By";
+    position: absolute;
+    width: 100%;
+    top: -0.75em;
+    color: #fff;
+    letter-spacing: 3px;
+    text-align: center;
+    font-size: 2em;
+    transition: 1s;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px #363636, 2px 2px 2px #363636, 3px 3px 3px #363636,
+        4px 4px 4px #363636, 5px 5px 5px #363636;
+}
+.content:hover::before {
+    transform: translateY(-100px);
+    opacity: 0;
+    filter: blur(30px);
+}
+.content::after {
+    content: "Happy New Year";
+    position: absolute;
+    left: 0;
+    letter-spacing: 3px;
+    width: 100%;
+    top: -0.75em;
+    color: #fff;
+    text-align: center;
+    font-size: 2em;
+    transition: 2s;
+    transform: translateY(-100px);
+    opacity: 0;
+    text-transform: uppercase;
+    filter: blur(30px);
+    text-shadow: 1px 1px 1px #363636, 2px 2px 2px #363636, 3px 3px 3px #363636,
+        4px 4px 4px #363636, 5px 5px 5px #363636;
+}
+.content:hover::after {
+    transform: translateY(0px);
+    opacity: 1;
+    filter: blur(0px);
+}
+.content span {
+    display: inline-block;
+    /* color: #c77f7f; */
+    color: #fff;
+    font-size: 10em;
+    font-weight: bold;
+    transition: 2s;
+    filter: blur(1px);
+    text-shadow: 1px 1px 1px #363636, 2px 2px 2px #363636, 3px 3px 3px #363636,
+        4px 4px 4px #363636, 5px 5px 5px #363636;
+}
+.content span:last-child {
+    color: #ff236e;
+}
+.content:hover span:last-child {
+    transform: rotate(45deg) translateY(-200px);
+    opacity: 0;
+    filter: blur(30px);
+}
+.content span:nth-child(3)::after {
+    content: "4";
+    color: #1dff4e;
+    position: absolute;
+    transform: rotate(-45deg) translateY(200px);
+    opacity: 1;
+    filter: blur(30px);
+    transition: 2s;
+}
+.content:hover span:nth-child(3)::after {
+    transform: rotate(0deg) translateY(0px);
+    opacity: 1;
+    filter: blur(0px);
+}
